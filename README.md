@@ -19,7 +19,7 @@ It helps users improve their writing by detecting and correcting grammar and spe
 
 ---
 
-## 🧠 Technologies Used
+##  Technologies Used
 
 | Library                 | Purpose                                  |
 | ----------------------- | ---------------------------------------- |
@@ -30,7 +30,7 @@ It helps users improve their writing by detecting and correcting grammar and spe
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ###  Run Locally (VS Code / Terminal)
 
@@ -88,6 +88,7 @@ It helps users improve their writing by detecting and correcting grammar and spe
 ##  License
 
 This project is open-source and free to use 
+
 
 
 
