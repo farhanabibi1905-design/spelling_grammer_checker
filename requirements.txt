@@ -1,0 +1,4 @@
+streamlit
+textblob
+language-tool-python
+openjdk-17-jre-headless
