@@ -1,18 +1,21 @@
-# 📝 Grammar & Spelling Checker App
+#  Grammar & Spelling Checker App
 
-This project is an **AI-powered Grammar and Spelling Checker** built with **Streamlit**, **TextBlob**, and **LanguageTool**.
+This project is an ** Grammar and Spelling Checker** built with **Streamlit**, **TextBlob**, and **LanguageTool**.
 It helps users improve their writing by detecting and correcting grammar and spelling mistakes instantly.
 
 ---
 
-## 🚀 Features
+##  Features
 
-✅ Check and correct **spelling mistakes** using TextBlob 
-✅ Detect and fix **grammar issues** with LanguageTool
-✅ Choose between **Typing** or **File Upload** input
-✅ Get a **side-by-side comparison** of original and corrected text
-✅ Displays **number of mistakes** and overall correction summary
-✅ Fully interactive **Streamlit web interface**
+
+-  Check and correct spelling mistakes using **TextBlob**
+-  Detect and fix grammar issues with **LanguageTool**
+-  Choose between **Typing** or **File Upload** input
+-  Get a **side-by-side comparison** of original and corrected text
+-  Displays **number of mistakes** and an overall **correction summary**
+-  Fully **interactive Streamlit web interface**
+
+
 
 ---
 
@@ -23,7 +26,7 @@ It helps users improve their writing by detecting and correcting grammar and spe
 | **Streamlit**           | Web app interface                        |
 | **TextBlob**            | Spelling correction                      |
 | **LanguageTool-Python** | Grammar correction                       |
-| **Pyngrok**             | Public link for Streamlit app (in Colab) |
+
 
 ---
 
@@ -57,10 +60,10 @@ It helps users improve their writing by detecting and correcting grammar and spe
 
 ---
 
-## 🧾 File Structure
+##  File Structure
 
 ```
-📁 grammar-spell-checker
+ grammar-spell-checker
 │
 ├── app.py                
 ├── requirements.txt      
@@ -69,21 +72,22 @@ It helps users improve their writing by detecting and correcting grammar and spe
 
 ---
 
-## 🌍 Deployment
+##  Deployment
 
 
 * **Streamlit Cloud** 
 
 
-## 👨‍💻 Author
+##  Author
 
-**Developed by:** *Farhana ibi*
-📧 For queries or suggestions, feel free to contact.
+**Developed by:** *Farhana Bibi*
+ For queries or suggestions, feel free to contact.
 
 ---
 
-## 📜 License
+##  License
 
 This project is open-source and free to use 
+
 
 
