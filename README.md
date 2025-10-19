@@ -7,7 +7,7 @@ It helps users improve their writing by detecting and correcting grammar and spe
 
 ## 🚀 Features
 
-✅ Check and correct **spelling mistakes** using TextBlob
+✅ Check and correct **spelling mistakes** using TextBlob \newline
 ✅ Detect and fix **grammar issues** with LanguageTool
 ✅ Choose between **Typing** or **File Upload** input
 ✅ Get a **side-by-side comparison** of original and corrected text
@@ -89,3 +89,4 @@ You can deploy this project using:
 ## 📜 License
 
 This project is open-source and free to use 
+
