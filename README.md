@@ -81,13 +81,14 @@ It helps users improve their writing by detecting and correcting grammar and spe
 ##  Author
 
 **Developed by:** *Farhana Bibi*
- For queries or suggestions, feel free to contact.
+
 
 ---
 
 ##  License
 
 This project is open-source and free to use 
+
 
 
 
