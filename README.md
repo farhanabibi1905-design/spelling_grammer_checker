@@ -7,7 +7,7 @@ It helps users improve their writing by detecting and correcting grammar and spe
 
 ## 🚀 Features
 
-✅ Check and correct **spelling mistakes** using TextBlob \newline
+✅ Check and correct **spelling mistakes** using TextBlob 
 ✅ Detect and fix **grammar issues** with LanguageTool
 ✅ Choose between **Typing** or **File Upload** input
 ✅ Get a **side-by-side comparison** of original and corrected text
@@ -34,8 +34,8 @@ It helps users improve their writing by detecting and correcting grammar and spe
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/<your-username>/grammar-spell-checker.git
-   cd grammar-spell-checker
+   git clone https://github.com/farhanabibi1905-design/spelling_grammer_checker.git
+   cd spelling_grammer_checker
    ```
 2. Create and activate a virtual environment:
 
@@ -62,22 +62,18 @@ It helps users improve their writing by detecting and correcting grammar and spe
 ```
 📁 grammar-spell-checker
 │
-├── app.py                # Main Streamlit app
-├── requirements.txt      # Dependencies list
-└── README.md             # Project documentation
+├── app.py                
+├── requirements.txt      
+└── README.md            
 ```
 
 ---
 
 ## 🌍 Deployment
 
-You can deploy this project using:
 
-* **Streamlit Cloud** (Recommended for quick hosting)
-* **GitHub Pages + Streamlit Sharing**
-* **Render** or **HuggingFace Spaces**
+* **Streamlit Cloud** 
 
----
 
 ## 👨‍💻 Author
 
@@ -89,4 +85,5 @@ You can deploy this project using:
 ## 📜 License
 
 This project is open-source and free to use 
+
 
