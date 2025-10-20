@@ -57,7 +57,7 @@ st.markdown(
         padding-right: 15px;
     }
     .stColumn:nth-child(2) {
-        padding-left: 125px;
+        padding-left: 25px;
     }
     </style>
     """,
@@ -136,17 +136,17 @@ if check_pressed:
         corrected_text = user_text
         spelling_mistakes = grammar_mistakes = 0
 
-        if check_option == " Both":
+        if check_option == "Both":
             corrected_text, spelling_mistakes = obj.correct_spell(corrected_text)
             mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(
                 corrected_text
             )
             corrected_text = grammar_result
 
-        elif check_option == " Spelling Check":
+        elif check_option == "Spelling Only":
             corrected_text, spelling_mistakes = obj.correct_spell(corrected_text)
 
-        elif check_option == " Grammar Check":
+        elif check_option == "Grammar Only":
             mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(
                 corrected_text
             )
@@ -184,6 +184,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
