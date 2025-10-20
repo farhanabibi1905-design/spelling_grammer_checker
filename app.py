@@ -38,8 +38,24 @@ class SpellCheckerModule:
 st.set_page_config(page_title="Grammar & Spelling Checker", layout="wide")
 
 
-# Two-column layout
-col1, col2 = st.columns([1, 2])
+# --- Two-column layout with border ---
+col1, col2 = st.columns([1, 2], gap="small")
+
+# Add a vertical separator (border) between columns
+st.markdown(
+    """
+    <style>
+    .stColumn:nth-child(1) {
+        border-right: 2px solid #4CAF50;  /* Green border */
+        padding-right: 15px;
+    }
+    .stColumn:nth-child(2) {
+        padding-left: 15px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 with col1:
    
@@ -158,5 +174,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
