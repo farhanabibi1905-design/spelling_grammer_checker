@@ -35,35 +35,59 @@ class SpellCheckerModule:
 
 
 # ------------------ Streamlit UI ------------------ #
-# st.set_page_config(page_title="Grammar & Spelling Checker", layout="wide")
-st.title("Grammar & Spelling Checker")
-st.markdown("Enhance your writing with AI-powered grammar and spelling correction!")
+st.set_page_config(page_title="Grammar & Spelling Checker", layout="wide")
 
-st.markdown("### Choose Input Method")
-option = st.radio("", ["Type Text", "Upload File"], horizontal=True)
-
-user_text = ""
-
-if option == "Type Text":
-    user_text = st.text_area("Enter your text below:", height=200)
-else:
-    uploaded_file = st.file_uploader("Upload a text file", type=["txt"])
-    if uploaded_file is not None:
-        user_text = uploaded_file.read().decode("utf-8")
-        st.text_area("File Content:", user_text, height=200)
-
-st.markdown("---")
-st.markdown("### Select Check Option")
-
-check_option = st.radio(
-    "Choose what you want to check:",
-    [" Spelling Check", " Grammar Check", " Both"],
-    horizontal=True
+# Centered title and subtitle
+st.markdown(
+    """
+    <h1 style="text-align:center;">📝 Grammar & Spelling Checker</h1>
+    <p style="text-align:center; font-size:18px;">Enhance your writing with AI-powered grammar and spelling correction!</p>
+    """,
+    unsafe_allow_html=True,
 )
 
-if st.button(" Check Text"):
+# Two-column layout
+col1, col2 = st.columns([1, 2])
+
+with col1:
+    st.markdown("### ⚙️ Settings")
+
+    st.markdown("**Choose Input Method:**")
+    option = st.radio("", ["Type Text", "Upload File"], horizontal=False)
+
+    st.markdown("**Select Check Option:**")
+    check_option = st.radio(
+        "", [" Spelling Check", " Grammar Check", " Both"], horizontal=False
+    )
+
+    st.markdown("---")
+
+    # Placeholder for summary metrics (will fill later)
+    summary_placeholder = st.empty()
+
+with col2:
+    st.markdown("### ✏️ Enter Your Text Below:")
+    user_text = ""
+
+    if option == "Type Text":
+        user_text = st.text_area("Input Text", height=200)
+    else:
+        uploaded_file = st.file_uploader("Upload a text file", type=["txt"])
+        if uploaded_file is not None:
+            user_text = uploaded_file.read().decode("utf-8")
+            st.text_area("File Content", user_text, height=200)
+
+    st.markdown("")
+
+    # Button to check text
+    check_pressed = st.button("🚀 Check Text")
+
+    # Result placeholders (appear after button click)
+    result_area = st.container()
+
+if check_pressed:
     if user_text.strip() == "":
-        st.warning(" Please enter or upload some text first.")
+        st.warning("⚠️ Please enter or upload some text first.")
     else:
         obj = SpellCheckerModule()
         corrected_text = user_text
@@ -71,37 +95,49 @@ if st.button(" Check Text"):
 
         if check_option == " Both":
             corrected_text, spelling_mistakes = obj.correct_spell(corrected_text)
-            mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(corrected_text)
+            mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(
+                corrected_text
+            )
             corrected_text = grammar_result
 
         elif check_option == " Spelling Check":
             corrected_text, spelling_mistakes = obj.correct_spell(corrected_text)
 
         elif check_option == " Grammar Check":
-            mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(corrected_text)
+            mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(
+                corrected_text
+            )
             corrected_text = grammar_result
 
-        # Layout: Two columns (Original | Corrected)
-        col1, col2 = st.columns(2)
-        with col1:
-            st.subheader("🧾 Original Text")
-            st.text_area("Original", user_text, height=250)
-        with col2:
-            st.subheader("✨ Corrected Text")
-            st.text_area("Corrected", corrected_text, height=250)
+        # --- Update right column with results ---
+        with result_area:
+            st.markdown("---")
+            st.markdown("### 🧾 Results")
 
-        # Results Summary
-        st.markdown("---")
-        st.subheader(" Results Summary")
+            colA, colB = st.columns(2)
+            with colA:
+                st.subheader("Original Text")
+                st.text_area("Original", user_text, height=250)
+            with colB:
+                st.subheader("Corrected Text")
+                st.text_area("Corrected", corrected_text, height=250)
 
-        colA, colB, colC = st.columns(3)
-        colA.metric("Spelling Mistakes", spelling_mistakes)
-        colB.metric("Grammar Mistakes", grammar_mistakes)
-        total = spelling_mistakes + grammar_mistakes
-        colC.metric("Total Issues Found", total)
+        # --- Update left column summary ---
+        with summary_placeholder.container():
+            st.markdown("### 📊 Results Summary")
+            colA, colB, colC = st.columns(3)
+            colA.metric("Spelling Mistakes", spelling_mistakes)
+            colB.metric("Grammar Mistakes", grammar_mistakes)
+            total = spelling_mistakes + grammar_mistakes
+            colC.metric("Total Issues Found", total)
+            st.success("✅ Text checked successfully!")
 
-        st.success(" Text checked successfully!")
-
-st.markdown("---")
-st.caption("Developed by Farhana Bibi | NLP Project Practice")
-
+st.markdown("---", unsafe_allow_html=True)
+st.markdown(
+    """
+    <p style="text-align:center; font-size:14px; color:gray;">
+    Developed by <b>Farhana Bibi</b> | NLP Project Practice
+    </p>
+    """,
+    unsafe_allow_html=True,
+)
