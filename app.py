@@ -82,16 +82,12 @@ with col1:
     
 
     option = st.selectbox(
-        "Select Input Method:",
+        st.markdown("#### Select Input Method"),
         ["Type Text", "Upload File"],
         index=0
     )
-
-    st.markdown("#### Choose Check Option")
-    check_option = st.radio(
-        "", ["Spelling Check", "Grammar Check", "Both"], horizontal=False
-    )
-
+    check_option = st.radio(st.markdown("#### Choose Check Option"), ["Milk", "Water","Almond Milk"], horizontal=False)
+    
     st.markdown("---")
 
     # Placeholder for summary metrics (filled after correction)
@@ -181,6 +177,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
