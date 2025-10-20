@@ -42,7 +42,21 @@ st.set_page_config(page_title="Grammar & Spelling Checker", layout="wide")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    st.markdown("### ⚙️ Settings")
+   
+    # Column heading describing its purpose
+    st.markdown("## ⚙️ Configuration Panel")
+
+    # Add a blockquote-style quote
+    st.markdown(
+        """
+        <blockquote style='border-left: 4px solid #4CAF50; padding-left: 10px; color: #555; font-style: italic;'>
+        “Customize how you want to check your text — grammar, spelling, or both — before correction.”
+        </blockquote>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.markdown("###  Settings")
 
     option = st.selectbox(
         "Select Input Method:",
@@ -64,7 +78,7 @@ with col2:
     st.markdown(
         """
         <h1 style="text-align:center;">📝 Grammar & Spelling Checker</h1>
-        <p style="text-align:center; font-size:18px;">Enhance your writing with AI-powered grammar and spelling correction!</p>
+       
         """,
         unsafe_allow_html=True,
     )
@@ -144,4 +158,5 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
