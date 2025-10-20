@@ -81,17 +81,16 @@ with col1:
 
     
 
-    st.markdown("#### Select Input Method")
     option = st.selectbox(
-        "",  # empty string since label is already in markdown
+        "Select Input Method",  # empty string since label is already in markdown
         ["Type Text", "Upload File"],
         index=0
     )
     
-    st.markdown("#### Choose Check Option")
+   
     check_option = st.radio(
-        "",  # empty string since label is already in markdown
-        ["Spelling Only", "Grammer Only", "Both"],
+        "Choose Check Option",  # empty string since label is already in markdown
+        ["Spelling Only", "Grammar Only", "Both"],
         horizontal=False
     )
 
@@ -185,6 +184,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
