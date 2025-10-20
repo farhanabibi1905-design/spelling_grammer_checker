@@ -53,11 +53,11 @@ st.markdown(
     """
     <style>
     .stColumn:nth-child(1) {
-        border-right: 2px solid #4CAF50;  /* Green border */
+        border-right: 2px solid #ccc;  /* Green border */
         padding-right: 15px;
     }
     .stColumn:nth-child(2) {
-        padding-left: 15px;
+        padding-left: 125px;
     }
     </style>
     """,
@@ -174,6 +174,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
