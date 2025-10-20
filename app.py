@@ -35,9 +35,9 @@ class SpellCheckerModule:
 
 
 # ------------------ Streamlit UI ------------------ #
-st.set_page_config(page_title="Grammar & Spelling Checker", layout="wide")
-st.title("📝 Grammar & Spelling Checker")
-st.markdown("Enhance your writing with AI-powered grammar and spelling correction! ✨")
+# st.set_page_config(page_title="Grammar & Spelling Checker", layout="wide")
+st.title("Grammar & Spelling Checker")
+st.markdown("Enhance your writing with AI-powered grammar and spelling correction!")
 
 st.markdown("### Choose Input Method")
 option = st.radio("", ["Type Text", "Upload File"], horizontal=True)
@@ -57,27 +57,27 @@ st.markdown("### Select Check Option")
 
 check_option = st.radio(
     "Choose what you want to check:",
-    ["🔤 Spelling Check", "🧩 Grammar Check", "✅ Both"],
+    [" Spelling Check", " Grammar Check", " Both"],
     horizontal=True
 )
 
-if st.button("🚀 Check Text"):
+if st.button(" Check Text"):
     if user_text.strip() == "":
-        st.warning("⚠️ Please enter or upload some text first.")
+        st.warning(" Please enter or upload some text first.")
     else:
         obj = SpellCheckerModule()
         corrected_text = user_text
         spelling_mistakes = grammar_mistakes = 0
 
-        if check_option == "✅ Both":
+        if check_option == " Both":
             corrected_text, spelling_mistakes = obj.correct_spell(corrected_text)
             mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(corrected_text)
             corrected_text = grammar_result
 
-        elif check_option == "🔤 Spelling Check":
+        elif check_option == " Spelling Check":
             corrected_text, spelling_mistakes = obj.correct_spell(corrected_text)
 
-        elif check_option == "🧩 Grammar Check":
+        elif check_option == " Grammar Check":
             mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(corrected_text)
             corrected_text = grammar_result
 
@@ -92,7 +92,7 @@ if st.button("🚀 Check Text"):
 
         # Results Summary
         st.markdown("---")
-        st.subheader("📊 Results Summary")
+        st.subheader(" Results Summary")
 
         colA, colB, colC = st.columns(3)
         colA.metric("Spelling Mistakes", spelling_mistakes)
@@ -100,7 +100,8 @@ if st.button("🚀 Check Text"):
         total = spelling_mistakes + grammar_mistakes
         colC.metric("Total Issues Found", total)
 
-        st.success("✅ Text checked successfully!")
+        st.success(" Text checked successfully!")
 
 st.markdown("---")
-st.caption("Developed by Ahad Raza | NLP Project Practice")
+st.caption("Developed by Farhana Bibi | NLP Project Practice")
+
