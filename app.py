@@ -128,9 +128,13 @@ with col2:
     # Result placeholders (appear after button click)
     result_area = st.container()
 
+MAX_LENGTH = 125  # Maximum allowed characters
+
 if check_pressed:
     if user_text.strip() == "":
         st.warning("⚠️ Please enter or upload some text first.")
+    elif len(user_text) > MAX_LENGTH:
+        st.warning(f"⚠️ Text is too long! Please limit it to {MAX_LENGTH} characters.")
     else:
         obj = SpellCheckerModule()
         corrected_text = user_text
@@ -138,19 +142,17 @@ if check_pressed:
 
         if check_option == "Both":
             corrected_text, spelling_mistakes = obj.correct_spell(corrected_text)
-            mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(
-                corrected_text
-            )
+            mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(corrected_text)
             corrected_text = grammar_result
 
         elif check_option == "Spelling Only":
             corrected_text, spelling_mistakes = obj.correct_spell(corrected_text)
 
         elif check_option == "Grammar Only":
-            mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(
-                corrected_text
-            )
+            mistakes, grammar_mistakes, grammar_result = obj.correct_grammar(corrected_text)
             corrected_text = grammar_result
+
+        # Display results (your existing code)
 
         # --- Update right column with results ---
         with result_area:
@@ -184,6 +186,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
