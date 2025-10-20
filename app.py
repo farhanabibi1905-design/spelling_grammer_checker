@@ -79,7 +79,7 @@ with col1:
         unsafe_allow_html=True
     )
 
-    st.markdown("###  Settings")
+    
 
     option = st.selectbox(
         "Select Input Method:",
@@ -87,7 +87,7 @@ with col1:
         index=0
     )
 
-    st.markdown("### 🧠 Choose Check Option")
+    st.markdown("#### Choose Check Option")
     check_option = st.radio(
         "", ["Spelling Check", "Grammar Check", "Both"], horizontal=False
     )
@@ -181,6 +181,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
