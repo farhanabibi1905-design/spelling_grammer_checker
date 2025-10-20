@@ -67,13 +67,13 @@ st.markdown(
 with col1:
    
     # Column heading describing its purpose
-    st.markdown("## ⚙️ Configuration Panel")
+    st.markdown("## ⚙️ Configuration ")
 
     # Add a blockquote-style quote
     st.markdown(
         """
         <blockquote style='border-left: 4px solid #4CAF50; padding-left: 10px; color: #555; font-style: italic;'>
-        “Customize how you want to check your text — grammar, spelling, or both — before correction.”
+        “Customize how you want to check your text from here.”
         </blockquote>
         """,
         unsafe_allow_html=True
@@ -181,6 +181,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
