@@ -7,7 +7,7 @@ import language_tool_python
 @st.cache_resource
 def load_grammar_tool():
 """Load LanguageTool only once to avoid re-downloading each time."""
-return language_tool_python.LanguageTool('en-US')
+    return language_tool_python.LanguageTool('en-US')
 
 # ------------------ Spell & Grammar Module ------------------
 
@@ -113,3 +113,4 @@ spelling_mistakes = grammar_mistakes = 0
 
 st.markdown("---")
 st.caption("Developed by Ahad Raza | NLP Project Practice")
+
