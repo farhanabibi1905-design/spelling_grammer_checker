@@ -128,7 +128,7 @@ with col2:
     # Result placeholders (appear after button click)
     result_area = st.container()
 
-MAX_WORDS = 125  # Maximum allowed words
+MAX_WORDS = 100  # Maximum allowed words
 
 if check_pressed:
     if user_text.strip() == "":
@@ -187,6 +187,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
