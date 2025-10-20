@@ -36,6 +36,13 @@ class SpellCheckerModule:
 
 # ------------------ Streamlit UI ------------------ #
 st.set_page_config(page_title="Grammar & Spelling Checker", layout="wide")
+st.markdown(
+        """
+        <h1 style="text-align:center;">📝 Grammar & Spelling Checker</h1>
+       
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 # --- Two-column layout with border ---
@@ -91,14 +98,7 @@ with col1:
     summary_placeholder = st.empty()
 with col2:
     # Centered title and subtitle
-    st.markdown(
-        """
-        <h1 style="text-align:center;">📝 Grammar & Spelling Checker</h1>
-       
-        """,
-        unsafe_allow_html=True,
-    )
-
+    
     st.markdown("### ✏️ Enter Your Text Below:")
     user_text = ""
 
@@ -174,6 +174,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
