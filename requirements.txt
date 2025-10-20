@@ -1,5 +1,6 @@
 streamlit==1.37.0
 textblob==0.17.1
-openjdk==11.0.28
+
 language-tool-python==2.9.4
 setuptools
+
