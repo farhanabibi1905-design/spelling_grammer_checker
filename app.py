@@ -37,14 +37,6 @@ class SpellCheckerModule:
 # ------------------ Streamlit UI ------------------ #
 st.set_page_config(page_title="Grammar & Spelling Checker", layout="wide")
 
-# Centered title and subtitle
-st.markdown(
-    """
-    <h1 style="text-align:center;">📝 Grammar & Spelling Checker</h1>
-    <p style="text-align:center; font-size:18px;">Enhance your writing with AI-powered grammar and spelling correction!</p>
-    """,
-    unsafe_allow_html=True,
-)
 
 # Two-column layout
 col1, col2 = st.columns([1, 2])
@@ -52,20 +44,31 @@ col1, col2 = st.columns([1, 2])
 with col1:
     st.markdown("### ⚙️ Settings")
 
-    st.markdown("**Choose Input Method:**")
-    option = st.radio("", ["Type Text", "Upload File"], horizontal=False)
+    option = st.selectbox(
+        "Select Input Method:",
+        ["Type Text", "Upload File"],
+        index=0
+    )
 
-    st.markdown("**Select Check Option:**")
+    st.markdown("### 🧠 Choose Check Option")
     check_option = st.radio(
-        "", [" Spelling Check", " Grammar Check", " Both"], horizontal=False
+        "", ["Spelling Check", "Grammar Check", "Both"], horizontal=False
     )
 
     st.markdown("---")
 
-    # Placeholder for summary metrics (will fill later)
+    # Placeholder for summary metrics (filled after correction)
     summary_placeholder = st.empty()
-
 with col2:
+    # Centered title and subtitle
+    st.markdown(
+        """
+        <h1 style="text-align:center;">📝 Grammar & Spelling Checker</h1>
+        <p style="text-align:center; font-size:18px;">Enhance your writing with AI-powered grammar and spelling correction!</p>
+        """,
+        unsafe_allow_html=True,
+    )
+
     st.markdown("### ✏️ Enter Your Text Below:")
     user_text = ""
 
@@ -141,3 +144,4 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
