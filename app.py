@@ -67,7 +67,7 @@ st.markdown(
 with col1:
    
     # Column heading describing its purpose
-    st.markdown("## ⚙️ Configuration ")
+    st.markdown("### ⚙️ Configuration ")
 
     # Add a blockquote-style quote
     st.markdown(
@@ -123,7 +123,7 @@ with col2:
     st.markdown("")
 
     # Button to check text
-    check_pressed = st.button("🚀 Check Text")
+    check_pressed = st.button(" Correct Text")
 
     # Result placeholders (appear after button click)
     result_area = st.container()
@@ -167,13 +167,13 @@ if check_pressed:
 
         # --- Update left column summary ---
         with summary_placeholder.container():
-            st.markdown("### 📊 Results Summary")
+            st.markdown("### Results Summary")
             colA, colB, colC = st.columns(3)
             colA.metric("Spelling Mistakes", spelling_mistakes)
             colB.metric("Grammar Mistakes", grammar_mistakes)
             total = spelling_mistakes + grammar_mistakes
             colC.metric("Total Issues Found", total)
-            st.success("✅ Text checked successfully!")
+            st.success("Text checked successfully!")
 
 st.markdown("---", unsafe_allow_html=True)
 st.markdown(
@@ -184,6 +184,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
