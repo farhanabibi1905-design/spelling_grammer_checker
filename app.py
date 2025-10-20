@@ -103,7 +103,7 @@ with col2:
     user_text = ""
 
     if option == "Type Text":
-        user_text = st.text_area("Input Text", height=200)
+        user_text = st.text_area("", height=200)
     else:
         uploaded_file = st.file_uploader("Upload a text file", type=["txt"])
         if uploaded_file is not None:
@@ -174,6 +174,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
