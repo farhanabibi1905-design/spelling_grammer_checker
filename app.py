@@ -6,7 +6,8 @@ import language_tool_python
 class SpellCheckerModule:
     def __init__(self):
         self.spell_check = TextBlob("")
-        self.grammar_tool = language_tool_python.LanguageToolPublicAPI('en-US')
+        self.grammar_tool = language_tool_python.LanguageTool('en-US')
+
 
 
     def correct_spell(self, text):
@@ -98,5 +99,6 @@ if st.button("🚀 Check Text"):
 
 st.markdown("---")
 st.caption("Developed by Ahad Raza | NLP Project Practice")
+
 
 
