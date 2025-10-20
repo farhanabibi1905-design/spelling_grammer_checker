@@ -46,7 +46,7 @@ st.markdown(
 st.markdown("---")
 
 # --- Two-column layout with border ---
-col1, col2 = st.columns([1, 2], gap="small")
+col1, col_sep, col2 = st.columns([1, 0.02, 2])  # middle column is thin for the divider
 
 # Add a vertical separator (border) between columns
 st.markdown(
@@ -96,6 +96,15 @@ with col1:
 
     # Placeholder for summary metrics (filled after correction)
     summary_placeholder = st.empty()
+
+with col_sep:
+    # vertical separator
+    st.markdown(
+        """
+        <div style='border-left: 2px solid #999; height: 100%; margin: 0 auto;'></div>
+        """,
+        unsafe_allow_html=True
+    )
 with col2:
     # Centered title and subtitle
     user_text = ""
@@ -172,6 +181,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
